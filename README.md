@@ -58,8 +58,3 @@ However, it does NOT pull in any optional requirements. You'll still have to do 
 | 🛡️ | Never analyses a download it started itself |
 | 🗺️ | Off-site rows are rendered as external hyperlinks |
 | 🪵 | Optional *TRACE* log for support issues |
-
----
-
-## 📂 Repository layout
-
