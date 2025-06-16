@@ -2,7 +2,7 @@
 *A Mod Organizer 2 plug-in that finds, displays & queues every Nexus
 **requirement** for a newly-downloaded mod – recursively.*
 
-![Demo GIF](docs/animated-demo.gif)
+![Preview](preview.mp4)
 
 ---
 
