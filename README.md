@@ -21,7 +21,7 @@ you:
 
 * Scrapes every “**Nexus requirements**” & “**Off-site requirements**”
   table **recursively**.  
-  (No Nexus API needed for that – only HTML.)
+  (No Nexus API needed for that – only raw HTML.)
 * Shows a tree where **every downloadable file** is a check-box.  
   *Duplicates stay in-sync; already downloaded/installed items are
   greyed-out.*
@@ -29,9 +29,11 @@ you:
   `startDownloadNexusFile()` **and keeps a progress dialog open until
   the last one finishes**.
 * Ignores its *own* downloads, so you never recurse forever.
-* Optional trace log for debugging curious edge-cases.
+* Optional TRACE log for debugging curious edge-cases.
 
-However, it does NOT pull in any optional requirements. You'll still have to do some due diligence to make sure your mod installations are complete considering all your other in-use mods.
+However, it does **NOT** pull in *optional* requirements. You’ll still
+need to verify that your chosen options make sense with the rest of your
+load-order.
 
 ---
 
@@ -40,21 +42,29 @@ However, it does NOT pull in any optional requirements. You'll still have to do 
 |                           |                                                      |
 |---------------------------|------------------------------------------------------|
 | **Requires**              | • Mod Organizer ≥ **2.5** <br>• Python plug-in loader |
-| **Install**               | 1. Download/clone the repo → `…\plugins\prereq_fetcher` <br>2. Check *Settings ▸ Plugins ▸ Prereq Fetcher* **enabled** |
-| **Setup once**            | Paste your **Nexus API key** (used only to resolve friendly names & file lists). |
-| **Use**                   | 1. Download *any* Nexus archive as usual <br>2. If that mod (recursively) has dependencies → a tree pops up <br>3. Tick/untick what you want → **OK** ⭐ |
-| **Debug log**             | Set *Settings ▸ Plugins ▸ Prereq Fetcher ▸ debug* = **True** to write `plugins/prereq_fetcher/debug.log` |
+| **Install**               | 1. Clone / download to `…\plugins\prereq_fetcher` <br>2. Check *Settings ▸ Plugins ▸ Prereq Fetcher* **enabled** |
+| **Setup once**            | Paste your **Nexus API key** (needed only for friendly names & file lists). |
+| **Use**                   | 1. Download *any* Nexus archive <br>2. If that mod (recursively) has dependencies → the tree pops up <br>3. Tick / untick files → **OK** ⭐ |
+| **Debug log**             | Toggle *Settings ▸ Plugins ▸ Prereq Fetcher ▸ debug* = **True** to write `plugins/prereq_fetcher/debug.log` |
 
 ---
 
-## 📦 Features
+## 👀 Coming Soon
+* **Auto-notes** – after installation, mods will be annotated in their  
+  *Notes* field with concise “dashboard” tags (e.g. `F: SKSE, SPID, DynDO`)  
+  and a *Needed By* list, all kept in-sync if you later uninstall a mod.  
+  (Opt-in, preserves any personal notes you already wrote.)
+
+---
+
+## 📦 Features (v1.0)
 
 | 🚩 | Feature |
 |----|---------|
-| 🔍 | **Recursive HTML scrape** – no MO2‐Nexus bridge required |
-| ✔️ | Object-level selection: every “Main” file is a check-box |
-| 🔄 | Duplicates propagate: tick it once, all identical leaves toggle |
-| 🕵️‍♂️ | Detects *already downloaded* archives (downloads folder) **and** *already installed* mods (reads `meta.ini`) |
+| 🔍 | **Recursive HTML scrape** – no MO2–Nexus bridge required |
+| ✔️ | Object-level selection: every “Main” file becomes a check-box |
+| 🔄 | Duplicates propagate: tick once, all identical leaves toggle |
+| 🕵️‍♂️ | Detects *already downloaded* archives and *already installed* mods |
 | 🛡️ | Never analyses a download it started itself |
-| 🗺️ | Off-site rows are rendered as external hyperlinks |
-| 🪵 | Optional *TRACE* log for support issues |
+| 🌐 | Off-site rows rendered as external links |
+| 🪵 | Optional *TRACE* log for bug-hunting |
