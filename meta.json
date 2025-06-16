@@ -1,0 +1,27 @@
+{
+    "Name": "Prereq Fetcher",
+    "Author": "nexus: sacredwitness; discord: hoagsie",
+    "Description": "",
+    "DocsUrl": "https://github.com/hoagsie/mo2-prereq_fetcher/blob/main/README.md",
+    "GithubUrl": "https://github.com/hoagsie/mo2-prereq_fetcher/tree/main",
+    "NexusUrl": "",
+    "Versions": [
+        {
+            "Version": "1.0.0.0-initial",
+            "Released": "2025-06-15",
+            "MinSupport": "2.5.2",
+            "MaxSupport": "2.5.2",
+            "MinWorking": "2.5.2",
+            "MaxWorking": "2.5.2",
+            "DownloadUrl": "https://github.com/hoagsie/mo2-prereq_fetcher/releases/download/v1.0.0-initial/prereq_fetcher_v1.0.0-initial.zip",
+            "PluginPath": [
+                "prereq_fetcher"
+            ],
+            "LocalePath": [],
+            "DataPath": [],
+            "ReleaseNotes": [
+                "Initial release version. Haven't tested on other versions to know it's true support potential."
+            ]
+        }
+    ]
+}
